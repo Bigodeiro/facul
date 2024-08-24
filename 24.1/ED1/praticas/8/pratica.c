@@ -18,12 +18,6 @@ int main ()
 	// ordenar o vetor usando o shellsort
 	ordena(alunos, n);
 
-	for (int i = 0; i < n; i++)
-	{
-		printf("%s\n", alunos[i].nome);
-	}
-	
-
 	// imprimir a resposta
 	imprimeResposta(alunos, n, k);
 

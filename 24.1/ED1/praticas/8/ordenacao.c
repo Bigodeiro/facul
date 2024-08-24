@@ -10,6 +10,11 @@ int compare(const char* aluno1, const char* aluno2) {
 
 void ordena(Aluno *alunos, int n)
 {
+    if (n == 1)
+    {
+        return;
+    }
+    
     int h;
 
     for (h = 1; h < n; h = (3 * h) + 1){}
@@ -22,7 +27,7 @@ void ordena(Aluno *alunos, int n)
             char aux[21];
             strcpy(aux, alunos[i].nome);
             int j = i;
-            while (compare(alunos[j - h].nome, aux) == 1)
+            while (compare(alunos[j - h].nome, aux) < 0)
             {
                 strcpy(alunos[j].nome, alunos[j - h].nome);
                 j = j - h;
@@ -30,7 +35,6 @@ void ordena(Aluno *alunos, int n)
                 {
                     break;
                 }
-                
             }
             strcpy(alunos[j].nome, aux);
         }
