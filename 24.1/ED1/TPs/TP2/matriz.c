@@ -4,8 +4,6 @@
 
 Matriz* iniciaMatriz( int tam )
 {
-    printf("Alocando reticulado do tamanho %dx%d\n", tam, tam);
-
     Matriz* matriz = (Matriz*) malloc( sizeof(Matriz) );
 
     matriz->vetColunas = (Lista*) malloc( tam * sizeof(Lista) );
@@ -39,14 +37,12 @@ Matriz* iniciaMatriz( int tam )
 
 void desalocaMatriz( Matriz* matriz )
 {
-    printf("Desalocando matriz\n");
+
 }
 
 
 bool insereCelula( Matriz* matriz, int x, int y )
 {
-    printf("Inserindo célula na posição %d %d\n", x, y);
-
     Celula* celula = (Celula*) malloc( sizeof(Celula) );
     celula->x = x;
     celula->y = y;
@@ -63,7 +59,6 @@ bool insereCelula( Matriz* matriz, int x, int y )
         while (aux->direitaProx != NULL && aux->x < x)
         {
             aux = aux->direitaProx;
-
         }
 
         if (aux->direitaProx == NULL)
@@ -114,8 +109,6 @@ bool pesquisaCelula( Matriz* matriz, int x, int y )
 
     while (aux != NULL && aux->x <= x)
     {
-        printf("aux->x = %d\n", aux->x);
-
         if (aux->x == x)
         {
             return true;
@@ -129,8 +122,6 @@ bool pesquisaCelula( Matriz* matriz, int x, int y )
 
 void imprimeMatriz( Matriz* matriz, int tam)
 {
-    printf("Imprimindo matriz\n");
-
     for (int i = 0; i < tam; i++)
     {
         Celula* aux = matriz->vetLinhas[i].pCabeca->direitaProx;

@@ -53,8 +53,54 @@ void imprimeReticulado( Automato* automato )
 }
 
 
+bool podeAcessar( int x, int y, int tam )
+{
+    return x >= 0 && x < tam && y >= 0 && y < tam;
+}
+
 void evoluirReticulado( Automato* automato )
 {
-    printf("Evoluindo reticulado %d vezes\n", automato->geracao);
+    for (int i = 0; i < automato->geracao; i++)
+    {
+        Matriz* novaGeracao = iniciaMatriz(automato->tam);
+
+        for (int j = 0; j < automato->tam; j++)
+        {
+            for (int k = 0; k < automato->tam; k++)
+            {
+                int vizinhos = 0;
+
+                for (int l = -1; l <= 1; l++)
+                {
+                    for (int m = -1; m <= 1; m++)
+                    {
+                        if (l == 0 && m == 0)
+                        {
+                            continue; //*Descobri isso daqui
+                        }
+                        
+                        int x = k + m;
+                        int y = j + l;
+
+                        if (podeAcessar(x, y, automato->tam) && pesquisaCelula(automato->reticulado, x, y)) 
+                        //*Aprendi que o operador && é short-circuited
+                        //*Ou seja, se a primeira condição for falsa, a segunda nem é avaliada
+                        {
+                            vizinhos++;
+                        }
+                    }
+                }
+
+                if (vizinhos == 3 || (vizinhos == 2 && pesquisaCelula(automato->reticulado, k, j))) //* mesmo caso aqui
+                {
+                    insereCelula(novaGeracao, k, j);
+                }
+            }
+        }
+
+        desalocaMatriz(automato->reticulado);
+
+        automato->reticulado = novaGeracao;
+    }
 }
 
