@@ -15,13 +15,17 @@ typedef struct celula
 
 }Celula;
 
+typedef struct lista
+{
+    Celula* pCabeca;
+    Celula* pUltimo;
+
+}Lista;
+
 typedef struct matriz
 {
-    Celula* direitaCabeca;
-    Celula* direitaUltima;
-
-    Celula* baixoCabeca;
-    Celula* baixoUltima;
+    Lista* vetColunas;
+    Lista* vetLinhas;
 
 }Matriz;
 
@@ -29,7 +33,7 @@ Matriz* iniciaMatriz( int tam );
 bool insereCelula( Matriz* matriz, int x, int y );
 bool removeCelula( Matriz* matriz, int x, int y );
 bool pesquisaCelula( Matriz* matriz, int x, int y );
-void imprimeMatriz( Matriz* matriz );
+void imprimeMatriz( Matriz* matriz , int tam );
 void desalocaMatriz( Matriz* matriz );
 
 

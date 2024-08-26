@@ -7,7 +7,6 @@
 // Função que aloca/inicia um reticulado de nLinhas x nColunas
 Matriz* alocarReticulado( int tam )
 {
-
     return iniciaMatriz(tam);
 }
 
@@ -24,8 +23,7 @@ void LeituraReticulado( Automato* automato )
 
     scanf("%d %d", &tam, &geracoes);
 
-    automato->nLinhas = tam;
-    automato->nColunas = tam;
+    automato->tam = tam;
 
     automato->geracao = geracoes;
 
@@ -51,7 +49,7 @@ void LeituraReticulado( Automato* automato )
 
 void imprimeReticulado( Automato* automato )
 {
-
+    imprimeMatriz(automato->reticulado, automato->tam);
 }
 
 

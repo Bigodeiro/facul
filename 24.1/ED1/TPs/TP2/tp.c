@@ -9,13 +9,13 @@ int main(int argc, char const *argv[])
 
     LeituraReticulado(&automato);
 
-    printf("A matriz %s vazia\n", automato.reticulado == NULL ? "está" : "não está");
+    // printf("A matriz %s vazia\n", automato.reticulado == NULL ? "está" : "não está");
 
-    evoluirReticulado(&automato);
+    // evoluirReticulado(&automato);
 
     imprimeReticulado(&automato);
 
-    desalocarReticulado(&automato);
+    // desalocarReticulado(&automato);
 
     return 0;
 }

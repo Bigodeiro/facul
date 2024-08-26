@@ -7,10 +7,10 @@ typedef struct automato
 {
     Matriz* reticulado;
     
-    int nLinhas;
-    int nColunas;
+    int tam;
 
     int geracao;
+    
 }Automato;
 
 Matriz* alocarReticulado( int tamanho );
