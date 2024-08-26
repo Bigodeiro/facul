@@ -9,7 +9,18 @@ int main(int argc, char const *argv[])
 
     LeituraReticulado(&automato);
 
-    // printf("A matriz %s vazia\n", automato.reticulado == NULL ? "está" : "não está");
+    int x, y;
+    x = 2;
+    y = 1;
+
+    printf("Pesquisando a celula %d %d\n", x, y);
+    if (pesquisaCelula(automato.reticulado, x, y))
+    {
+        printf("Celula encontrada\n");
+    }else
+    {
+        printf("Celula não encontrada\n");
+    }
 
     // evoluirReticulado(&automato);
 

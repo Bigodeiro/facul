@@ -37,11 +37,11 @@ Matriz* iniciaMatriz( int tam )
 }
 
 
-
 void desalocaMatriz( Matriz* matriz )
 {
     printf("Desalocando matriz\n");
 }
+
 
 bool insereCelula( Matriz* matriz, int x, int y )
 {
@@ -110,8 +110,20 @@ bool removeCelula( Matriz* matriz, int x, int y )
 
 bool pesquisaCelula( Matriz* matriz, int x, int y )
 {
-    return false;
+    Celula* aux = matriz->vetLinhas[y].pCabeca->direitaProx;
 
+    while (aux != NULL && aux->x <= x)
+    {
+        printf("aux->x = %d\n", aux->x);
+
+        if (aux->x == x)
+        {
+            return true;
+        }
+        aux = aux->direitaProx;
+    }
+
+    return false;
 }
 
 
