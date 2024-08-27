@@ -13,7 +13,7 @@ Matriz* alocarReticulado( int tam )
 // Função que desaloca um reticulado
 void desalocarReticulado( Automato* automato )
 {
-    desalocaMatriz(automato->reticulado);
+    desalocaMatriz(automato->reticulado, automato->tam);
 }
 
 // Função que lê um reticulado e armazena no automato
@@ -98,7 +98,7 @@ void evoluirReticulado( Automato* automato )
             }
         }
 
-        desalocaMatriz(automato->reticulado);
+        desalocaMatriz(automato->reticulado, automato->tam);
 
         automato->reticulado = novaGeracao;
     }

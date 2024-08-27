@@ -35,9 +35,23 @@ Matriz* iniciaMatriz( int tam )
 }
 
 
-void desalocaMatriz( Matriz* matriz )
+void desalocaMatriz( Matriz* matriz, int tam )
 {
-
+    for (int i = 0; i < tam; i++)
+    {
+        Celula* aux = matriz->vetLinhas[i].pCabeca->direitaProx;
+        while (aux != NULL)
+        { 
+            Celula* temp = aux;
+            aux = aux->direitaProx; //sem perder o ponteiro da celula atual
+            free(temp);
+        }
+        free(matriz->vetLinhas[i].pCabeca);
+    }
+    //depois que todas as listas forem liberadas
+    free(matriz->vetLinhas); 
+    free(matriz->vetColunas);
+    free(matriz);
 }
 
 

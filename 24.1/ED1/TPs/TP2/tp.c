@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
 
     imprimeReticulado(&automato);
 
-    // desalocarReticulado(&automato);
+    desalocarReticulado(&automato);
 
     return 0;
 }
