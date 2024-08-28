@@ -3,16 +3,19 @@
 #include <stdlib.h>
 #include "matriz.h"
 
+//Função encapsulada para alocar um reticulado
 Matriz* alocarReticulado( int tam )
 {
     return iniciaMatriz(tam);
 }
 
+//Função encapsulada para desalocar um reticulado
 void desalocarReticulado( Automato* automato )
 {
     desalocaMatriz(automato->reticulado, automato->tam);
 }
 
+//Função para ler um reticulado, alocando o esqueleto da matriz e inserindo as células vivas
 void LeituraReticulado( Automato* automato )
 {
     int tam, geracoes;
@@ -40,11 +43,13 @@ void LeituraReticulado( Automato* automato )
     }
 }
 
+//Função encapsulada para imprimir um reticulado
 void imprimeReticulado( Automato* automato )
 {
     imprimeMatriz(automato->reticulado, automato->tam);
 }
 
+//Função para verificar se uma célula pode ser acessada (nao tem índice negativo e não ultrapassa o tamanho do reticulado)
 bool podeAcessar( int x, int y, int tam )
 {
     return x >= 0 && x < tam && y >= 0 && y < tam;
@@ -68,14 +73,13 @@ void evoluirReticulado( Automato* automato )
                     {
                         if (l == 0 && m == 0)
                         {
-                            continue; //*Descobri que isso existe
+                            continue; //Faz com que pesquisaCelula não seja chamado para a própria célula
                         }
                         
                         int x = k + m;
                         int y = j + l;
 
-                        //*Aprendi que o operador && é short-circuited
-                        //*Ou seja, se a primeira condição for falsa, a segunda nem é avaliada
+                        //Como é short circuited, não dá segmentation fault
                         if (podeAcessar(x, y, automato->tam) && pesquisaCelula(automato->reticulado, x, y)) 
                         {
                             vizinhos++;
@@ -83,7 +87,7 @@ void evoluirReticulado( Automato* automato )
                     }
                 }
 
-                if (vizinhos == 3 || (vizinhos == 2 && pesquisaCelula( automato->reticulado, k, j ) ) ) //* mesmo caso aqui
+                if (vizinhos == 3 || (vizinhos == 2 && pesquisaCelula( automato->reticulado, k, j ) ) )
                 {
                     insereCelula(novaGeracao, k, j);
                 }
