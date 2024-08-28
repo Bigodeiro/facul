@@ -1,15 +1,22 @@
-all: tp.o automato.o matriz.o
-	@gcc tp.o automato.o matriz.o -o exe
-	@rm -r tp.o automato.o matriz.o
-tp.o: tp.c
-	@gcc tp.c -c -Wall
+TARGET=exe
+CC=gcc
+DEBUG=-g
+OPT=-O0
+WARN=-Wall
+ALLEGRO=-lallegro -lallegro_main -lallegro_audio -lallegro_dialog -lallegro_ttf -lallegro_image -lallegro_color -lallegro_memfile -lallegro_acodec -lallegro_primitives -lallegro_font
+CCFLAGS=$(DEBUG) $(OPT) $(WARN) $(ALLEGRO)
+LD=gcc
+OBJS= alegro.o automato.o matriz.o
+
+all: $(OBJS)
+	$(LD) -o $(TARGET) $(OBJS) $(CCFLAGS)
+	@rm *.o
+
+alegro.o: alegro.c
+	$(CC) -c $(CCFLAGS) alegro.c -o alegro.o
+
 automato.o: automato.c
-	@gcc automato.c -c -Wall
+	@gcc automato.c -c -Wall 
+
 matriz.o: matriz.c
 	@gcc matriz.c -c -Wall
-val:
-	@gcc -g -o exeval matriz.c automato.c tp.c -Wall
-valrun: val
-	@valgrind --leak-check=full --track-origins=yes -s ./exeval
-run:
-	@./exe

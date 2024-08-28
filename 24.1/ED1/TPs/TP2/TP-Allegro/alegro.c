@@ -1,8 +1,5 @@
 #include "automato.h"
 
-
-
-
 int main(int argc, char const *argv[])
 {
     Automato automato;
