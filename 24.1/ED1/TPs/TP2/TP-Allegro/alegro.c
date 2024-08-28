@@ -55,17 +55,15 @@ int main(int argc, char const *argv[])
                 {
                     if ( pesquisaCelula( automato.reticulado, i, j ))
                     {
-                        al_draw_filled_rectangle(i * LARGURA_TELA/automato.tam, j * ALTURA_TELA/automato.tam, (i+1) * LARGURA_TELA/automato.tam, (j+1) * ALTURA_TELA/automato.tam, al_map_rgb(255,255,255));
+                        al_draw_filled_rectangle(i * LARGURA_TELA/automato.tam,
+                                                 j * ALTURA_TELA/automato.tam, (i+1) * LARGURA_TELA/automato.tam,
+                                                 (j+1) * ALTURA_TELA/automato.tam, al_map_rgb(255,255,255));
                     }
                 }
             }
         }
         al_flip_display();
     }
-
-    //evoluirReticulado(&automato);
-
-    //imprimeReticulado(&automato);
 
     desalocarReticulado(&automato);
 

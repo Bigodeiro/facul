@@ -1,6 +1,5 @@
 # ifndef automato_h
 # define automato_h
-
 #include "matriz.h"
 
 typedef struct automato
@@ -18,6 +17,5 @@ void desalocarReticulado( Automato* automato );
 void LeituraReticulado( Automato* automato );
 void imprimeReticulado( Automato* automato );
 void evoluirReticulado( Automato* automato );
-
 
 # endif

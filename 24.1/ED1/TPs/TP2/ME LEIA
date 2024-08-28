@@ -1,0 +1,31 @@
+Olá bom dia!
+
+Este é um pequeno texto-guia de como executar o TP sem fazer confusão.
+
+Para executar o programa sem a interface grafica do Allegro, entre na 
+pasta "TP-Terminal" rode o comando make e então rode o executavel gerado,
+passando algum arquivo da pasta "tests" como input. 
+  Exemplo: " ./exe < tests/3.in "
+
+Agora, para executar o programa com a interface grafica, primeiro você deve
+garantir que a biblioteca Allegro está instalada no seu sistema, para isso
+rode o seguinte comando de acordo com seu sistema operacional:
+
+  Ubuntu, Debian, Linux Mint e similares:
+  sudo apt install liballegro5.2 liballegro5-dev
+
+  Fedora e similares:
+  sudo dnf install allegro5 allegro5-devel
+
+  Arch Linux, Manjaro e similares:
+  sudo pacman -S allegro
+
+  Gentoo, Funtoo e similares:
+  sudo emerge allegro
+
+Após certificar-se que a biblioteca está instalada, entre na pasta "TP-Allegro"
+e rode o comando make, então rode o executavel gerado. 
+  Exemplo: " ./exe "
+
+Nota: Para sair do programa com a interface grafica, apertar o "X" na janela grafica
+ou então apertar "Ctrl + C" no terminal.

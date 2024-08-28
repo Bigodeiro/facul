@@ -31,10 +31,8 @@ typedef struct matriz
 
 Matriz* iniciaMatriz( int tam );
 bool insereCelula( Matriz* matriz, int x, int y );
-bool removeCelula( Matriz* matriz, int x, int y );
 bool pesquisaCelula( Matriz* matriz, int x, int y );
 void imprimeMatriz( Matriz* matriz , int tam );
 void desalocaMatriz( Matriz* matriz, int tam );
-
 
 # endif

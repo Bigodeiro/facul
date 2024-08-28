@@ -7,23 +7,27 @@ Matriz* iniciaMatriz( int tam )
     Matriz* matriz = (Matriz*) malloc( sizeof(Matriz) );
 
     matriz->vetColunas = (Lista*) malloc( tam * sizeof(Lista) );
-
     matriz->vetLinhas = (Lista*) malloc( tam * sizeof(Lista) );
 
     for (int i = 0; i < tam; i++)
     {
         Celula* cabecaColuna = (Celula*) malloc( sizeof(Celula) );
+
         cabecaColuna->x = -1;
         cabecaColuna->y = -1;
+        
         cabecaColuna->baixoProx = NULL;
         cabecaColuna->direitaProx = NULL;
 
         matriz->vetColunas[i].pCabeca = cabecaColuna;
         matriz->vetColunas[i].pUltimo = cabecaColuna;
 
+        
         Celula* cabecaLinha = (Celula*) malloc( sizeof(Celula) );
+
         cabecaLinha->x = -1;
         cabecaLinha->y = -1;
+        
         cabecaLinha->baixoProx = NULL;
         cabecaLinha->direitaProx = NULL;
 
@@ -44,8 +48,10 @@ void desalocaMatriz( Matriz* matriz, int tam )
         { 
             Celula* temp = aux;
             aux = aux->direitaProx; //sem perder o ponteiro da celula atual
+
             free(temp);
         }
+
         free(matriz->vetLinhas[i].pCabeca);
     }
     for (int i = 0; i < tam; i++)
@@ -55,13 +61,16 @@ void desalocaMatriz( Matriz* matriz, int tam )
         { 
             Celula* temp = aux;
             aux = aux->direitaProx; //sem perder o ponteiro da celula atual
+
             free(temp);
         }
+
         free(matriz->vetColunas[i].pCabeca);
     }
     //depois que todas as listas forem liberadas
     free(matriz->vetLinhas); 
     free(matriz->vetColunas);
+
     free(matriz);
 }
 
@@ -69,8 +78,10 @@ void desalocaMatriz( Matriz* matriz, int tam )
 bool insereCelula( Matriz* matriz, int x, int y )
 {
     Celula* celula = (Celula*) malloc( sizeof(Celula) );
+
     celula->x = x;
     celula->y = y;
+
     celula->baixoProx = NULL;
     celula->direitaProx = NULL;
 
@@ -117,16 +128,7 @@ bool insereCelula( Matriz* matriz, int x, int y )
     }
 
     return false;
-
 }
-
-
-bool removeCelula( Matriz* matriz, int x, int y )
-{
-    return false;
-
-}
-
 
 bool pesquisaCelula( Matriz* matriz, int x, int y )
 {
@@ -138,12 +140,12 @@ bool pesquisaCelula( Matriz* matriz, int x, int y )
         {
             return true;
         }
+
         aux = aux->direitaProx;
     }
 
     return false;
 }
-
 
 void imprimeMatriz( Matriz* matriz, int tam)
 {
@@ -163,10 +165,5 @@ void imprimeMatriz( Matriz* matriz, int tam)
         }
         printf("\n");
     }
-
     printf("\n");
 }
-
-
-
-
