@@ -97,7 +97,7 @@ bool insereCelula( Matriz* matriz, int x, int y )
     {
         //A celula aux ira percorrer a lista até chegar no final, ou ate achar uma celula com x maior que o x da celula a ser inserida
         Celula* aux = matriz->vetLinhas[y].pCabeca->direitaProx;
-        while (aux->direitaProx != NULL && aux->x < x)
+        while ( aux->direitaProx != NULL )
         {
             aux = aux->direitaProx;
         }
@@ -121,7 +121,7 @@ bool insereCelula( Matriz* matriz, int x, int y )
     }else
     {
         Celula* aux = matriz->vetColunas[x].pCabeca->baixoProx;
-        while (aux->baixoProx != NULL && aux->y < y)
+        while ( aux->baixoProx != NULL )
         {
             aux = aux->baixoProx;
         }
