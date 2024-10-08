@@ -1,0 +1,29 @@
+InOrder:
+97 ( [melao|fazendavilaalegre] )
+100 ( [alecrim|fazendarecantoalegre] )
+101 ( [manga|fazendacamposereno] )
+118 ( [melao|sitiocampoalegre] )
+120 ( [brocolis|fazendadoslagos] [amendoim|fazendaserranegra] )
+123 ( [algodao|sitiorecantoverde] )
+124 ( [capimtifton|sitiovaledosol] )
+137 ( [banana|sitiocampolimpo] )
+
+PreOrder:
+100 ( [alecrim|fazendarecantoalegre] )
+97 ( [melao|fazendavilaalegre] )
+118 ( [melao|sitiocampoalegre] )
+120 ( [brocolis|fazendadoslagos] [amendoim|fazendaserranegra] )
+123 ( [algodao|sitiorecantoverde] )
+101 ( [manga|fazendacamposereno] )
+137 ( [banana|sitiocampolimpo] )
+124 ( [capimtifton|sitiovaledosol] )
+
+PosOrder:
+124 ( [capimtifton|sitiovaledosol] )
+101 ( [manga|fazendacamposereno] )
+97 ( [melao|fazendavilaalegre] )
+100 ( [alecrim|fazendarecantoalegre] )
+123 ( [algodao|sitiorecantoverde] )
+120 ( [brocolis|fazendadoslagos] [amendoim|fazendaserranegra] )
+118 ( [melao|sitiocampoalegre] )
+137 ( [banana|sitiocampolimpo] )

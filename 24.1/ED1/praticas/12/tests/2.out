@@ -1,0 +1,20 @@
+InOrder:
+20 ( [cevada|fazendaazul] )
+30 ( [trigo|sitiovaledapaz] )
+50 ( [milho|fazendadaalegria] [cafe|sitiocabecao] )
+60 ( [arroz|fazendacross] )
+70 ( [soja|fazendadaluz] )
+
+PreOrder:
+20 ( [cevada|fazendaazul] )
+30 ( [trigo|sitiovaledapaz] )
+60 ( [arroz|fazendacross] )
+70 ( [soja|fazendadaluz] )
+50 ( [milho|fazendadaalegria] [cafe|sitiocabecao] )
+
+PosOrder:
+50 ( [milho|fazendadaalegria] [cafe|sitiocabecao] )
+30 ( [trigo|sitiovaledapaz] )
+20 ( [cevada|fazendaazul] )
+70 ( [soja|fazendadaluz] )
+60 ( [arroz|fazendacross] )

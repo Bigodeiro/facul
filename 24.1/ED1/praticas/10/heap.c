@@ -155,7 +155,7 @@ bool ehMaisNovo(Data d1, Data d2) {
             }
         }
     }
-    return !res;
+    return res;
 }
 
 //* Mantenha como especificado
